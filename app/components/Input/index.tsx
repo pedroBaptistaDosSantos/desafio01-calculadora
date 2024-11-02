@@ -1,9 +1,14 @@
 import './style.css';
 
-export default function Input(){
+type PrivateProps = {
+    value: string ;
+}
+
+
+export default function Input({value}: PrivateProps){
     return(
         <div className='input'>
-            <input type="text" />
+            <input disabled type="text" value={value} />
         </div>
     )
 }

@@ -1,9 +1,15 @@
 import './style.css';
+import { ComponentPropsWithoutRef, MouseEventHandler } from 'react';
 
-export default function Button(){
+type PrivateProps = {
+    label: string;
+    onClick:MouseEventHandler;
+}
+
+export default function Button({label, onClick}: PrivateProps){
     return(
-        <div>
-            Olá
-        </div>
+        <button className='ButtonContainer p-0' onClick={onClick}>
+            {label}
+        </button>
     )
 }
